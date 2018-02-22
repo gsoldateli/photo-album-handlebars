@@ -1,0 +1,22 @@
+{
+  "name": "photo-album-handlebars",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Guilherme Soldateli <guilherm3soldateli@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/gsoldateli/photo-album-handlebars",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "zepto": "^1.2.0",
+    "handlebars": "^4.0.11"
+  }
+}

@@ -1,0 +1,19 @@
+$baseline: 16px;
+* {
+	box-sizing: border-box;
+}
+body {
+	color: #333;
+	font-family: 'Lato', sans-serif;
+}
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
+
+.page-title {
+	font-size: 4rem;
+	font-weight: bold;
+	margin: 1rem 0 2.5rem 0;
+}

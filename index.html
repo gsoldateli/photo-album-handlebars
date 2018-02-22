@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photo Album</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,900" rel="stylesheet">
+	<link rel="stylesheet" href="dist/css/style.min.css">
+
+	<script id="album-list-template" type="text/x-handlebars-template">
+		<div class="album-list">
+			
+			{{#each albums as |album|}}
+				{{#each album.pictures as |picture| }}
+					{{#if @first}}
+						{{>album-item picture album=album}}
+					{{/if}}
+				{{/each}}
+				
+			{{/each}}
+		</div>
+	</script>
+	
+	<script id="album-item-template" type="text/x-handlebars-template">
+		<article class="album-item" data-album-id="{{album.id}}">
+			<div class="album-item__image">
+				<img src="{{thumbnailUrl}}" alt="">
+			</div>
+			<h2 class="album-item__title">{{album.title}} - 
+				<small>{{album.pictures.length}} images</small></h2>
+		</article>
+	</script>
+
+	<script id="gallery-template" type="text/x-handlebars-template">
+			<div class="gallery">
+
+				<img id="main-image" src="{{album.pictures.0.url}}" alt="" class="gallery__image">
+
+				<div class="gallery__pictures">
+					{{#each album.pictures as |picture|}}
+						<img src="{{thumbnailUrl}}" data-url="{{url}}"" alt="">
+					{{/each}}
+				</div>
+			</div>
+		</script>
+
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-title">Photo Album Using handlebars.js</h1>
+	</div>
+	<div id="album-holder" class="container">
+		<div class="album-list">
+		</div>
+	</div>
+
+<div class="modal" style="display: none;">
+	
+	<div class="modal__content">
+		<a href="#" class="modal__close">X</a>
+		<div class="modal__content-holder">
+			
+		</div>
+	</div>
+</div>
+
+<script src="dist/js/script.min.js"></script>
+</body>
+</html>
